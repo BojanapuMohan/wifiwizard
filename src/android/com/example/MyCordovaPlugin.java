@@ -48,9 +48,9 @@ public class MyCordovaPlugin extends CordovaPlugin {
 
 
       final CordovaPlugin that = this;
-      Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), MainActivity.class);
-      intentScan.addCategory(Intent.CATEGORY_DEFAULT);
-      intentScan.setPackage(that.cordova.getActivity().getApplicationContext().getPackageName());
+      //Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), MainActivity.class);
+      //intentScan.addCategory(Intent.CATEGORY_DEFAULT);
+      //intentScan.setPackage(that.cordova.getActivity().getApplicationContext().getPackageName());
 
       that.cordova.startActivityForResult(that, intentScan, 1234);
     } else if(action.equals("getDate")) {
@@ -59,7 +59,7 @@ public class MyCordovaPlugin extends CordovaPlugin {
       callbackContext.sendPluginResult(result);
     }
       else if(action.equals("getWifiDetails")){
-        WifiManager mWifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
+        WifiManager mWifiManager = (WifiManager) this.cordova.getActivity().getSystemService(Context.WIFI_SERVICE);
         WifiInfo connInfo = mWifiManager.getConnectionInfo();
 
         //Get IP Address
