@@ -60,11 +60,11 @@ public class MyCordovaPlugin extends CordovaPlugin {
     }
       else if(action.equals("getWifiDetails")){
 
-        CharSequence text = "Hello toast!";
+        /*CharSequence text = "Hello toast!";
         int duration = Toast.LENGTH_LONG;
 
         Toast toast = Toast.makeText(this.cordova.getActivity().getBaseContext(), text, duration);
-        toast.show();
+        toast.show();*/
         
         WifiManager mWifiManager = (WifiManager) this.cordova.getActivity().getSystemService(Context.WIFI_SERVICE);
         WifiInfo connInfo = mWifiManager.getConnectionInfo();
