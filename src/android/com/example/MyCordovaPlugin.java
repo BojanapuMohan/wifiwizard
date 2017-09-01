@@ -52,7 +52,7 @@ public class MyCordovaPlugin extends CordovaPlugin {
       //intentScan.addCategory(Intent.CATEGORY_DEFAULT);
       //intentScan.setPackage(that.cordova.getActivity().getApplicationContext().getPackageName());
 
-      that.cordova.startActivityForResult(that, intentScan, 1234);
+      //that.cordova.startActivityForResult(that, intentScan, 1234);
     } else if(action.equals("getDate")) {
       // An example of returning data back to the web layer
       final PluginResult result = new PluginResult(PluginResult.Status.OK, (new Date()).toString());
@@ -67,7 +67,7 @@ public class MyCordovaPlugin extends CordovaPlugin {
 
 
         //Converting IP address from hex to decimal
-         ipAddressValue = String.format("%d.%d.%d.%d",
+        String ipAddressValue = String.format("%d.%d.%d.%d",
                 (ipAddress & 0xff),
                 (ipAddress >> 8 & 0xff),
                 (ipAddress >> 16 & 0xff),
