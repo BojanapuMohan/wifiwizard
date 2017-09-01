@@ -11,8 +11,8 @@ var MyCordovaPlugin = {
     exec(cb, null, PLUGIN_NAME, 'getDate', []);
   },
 
-  getWifiDetails: function(cb) {
-    exec(cb, null, PLUGIN_NAME, 'getWifiDetails', []);
+  getWifiDetails: function(phrase,cb) {
+    exec(cb, null, PLUGIN_NAME, 'getWifiDetails', [phrase]);
   }
 };
 
