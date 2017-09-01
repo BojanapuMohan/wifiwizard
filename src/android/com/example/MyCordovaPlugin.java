@@ -65,7 +65,7 @@ public class MyCordovaPlugin extends CordovaPlugin {
 
         Toast toast = Toast.makeText(this.cordova.getActivity().getBaseContext(), text, duration);
         toast.show();*/
-        
+
         WifiManager mWifiManager = (WifiManager) this.cordova.getActivity().getSystemService(Context.WIFI_SERVICE);
         WifiInfo connInfo = mWifiManager.getConnectionInfo();
 
@@ -82,7 +82,10 @@ public class MyCordovaPlugin extends CordovaPlugin {
 
          JSONObject wifiObject = new JSONObject();
          wifiObject.put("IP Address", ipAddressValue);
-         wifiObject.put("SSID", connInfo.getMacAddress());
+         wifiObject.put("SSID", connInfo.getSSID());
+         wifiObject.put("BSSID", connInfo.getBSSID());
+         wifiObject.put("Network Id", connInfo.getNetworkId());
+         wifiObject.put("Rssi", connInfo.getRssi());
          wifiObject.put("MAC Address", connInfo.getMacAddress());
          wifiObject.put("LinkSpeed", connInfo.getLinkSpeed() + WifiInfo.LINK_SPEED_UNITS);
 
